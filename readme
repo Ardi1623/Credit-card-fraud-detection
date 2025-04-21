@@ -1,0 +1,58 @@
+# 🧠 Project 3A: Credit Card Fraud Detection with Imbalanced Data
+
+Detecting fraudulent credit card transactions is a significant challenge in the financial world due to **highly imbalanced data** — fraudulent transactions are very rare compared to normal ones. This project aims to build a machine learning model capable of identifying fraud transactions with **high accuracy and low false alarms**.
+
+---
+
+## 📦 Dataset
+- Source: [Kaggle - Credit Card Fraud Detection](https://www.kaggle.com/datasets/mlg-ulb/creditcardfraud)
+- Data size: 284,807 transactions
+- Label: `Class` (0 = normal, 1 = fraud)
+
+---
+
+## 🎯 Project Goals
+- Handle **data imbalance (imbalanced classification)** using methods:
+    - SMOTE
+    - Undersampling
+    - Class Weight
+- Build and compare models:
+    - Random Forest
+    - XGBoost
+    - LightGBM
+- Perform **thorough evaluation** with metrics:
+    - Precision
+    - Recall
+    - F1-score
+    - ROC-AUC
+
+---
+
+## ⚙️ Tools & Technologies
+- Python
+- Scikit-learn
+- Imbalanced-learn (SMOTE)
+- XGBoost, LightGBM
+- Matplotlib & Seaborn (visualization)
+- Optuna (Hyperparameter tuning – optional)
+
+---
+
+## 🧪 Final Results & Insights
+
+| Handling Method | Model           | Precision | Recall | F1-score | ROC AUC |
+|-----------------|-----------------|-----------|--------|----------|---------|
+| SMOTE           | Random Forest   | 0.83      | 0.83   | 0.83     | 0.97    |
+| SMOTE           | XGBoost         | 0.77      | 0.87   | 0.82     | 0.97    |
+| SMOTE           | LightGBM        | 0.60      | 0.86   | 0.71     | 0.97    |
+
+📌 **SMOTE + Random Forest/XGBoost** provide the most balanced and stable results.
+
+---
+
+## 🧠 Additional Insights
+- Undersampling yields high recall but very low precision (many false alarms).
+- Class Weight is also quite good but less stable than SMOTE.
+- After tuning, recall can be drastically improved, but caution is needed as precision can plummet — suitable for **high-risk cases** like fraud, where false alarms are preferable to missing actual fraud.
+
+---
